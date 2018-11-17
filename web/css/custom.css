@@ -7,3 +7,17 @@
 body  {
     font-family: 'Poppins', sans-serif !important;
 }
+
+.breadcumbs ul {
+    background-color: #4c5f6b;
+
+}
+
+.breadcumbs li{
+    color: white !important;
+
+}
+
+.breadcumbs a {
+    color: #fe4930;
+}

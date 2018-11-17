@@ -36,12 +36,12 @@
 //                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
-                        'label' => 'Settings',
+                        'label' => 'Management',
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
                             ['label' => 'User Managemnet', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Category Management', 'icon' => 'dashboard', 'url' => ['/debug'],],
+                            ['label' => 'Category Management', 'icon' => 'list-ul', 'url' => ['/categories/'],],
                         ],
                     ],
                 ],

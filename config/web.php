@@ -27,7 +27,11 @@ $config = [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
-                '<alias:\w+>' => 'site/<alias>',
+//                '<alias:\w+>' => 'site/<alias>',
+                '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
+                '<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:[\w\-]+>/<action:[\w\-]+>' => '<controller>/<action>',
+                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<module>/<controller>/<action>',
             ],
         ],
         //more skin
