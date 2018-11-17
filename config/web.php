@@ -27,6 +27,7 @@ $config = [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
+                'login' => 'site/login',
 //                '<alias:\w+>' => 'site/<alias>',
                 '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
                 '<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<controller>/<action>',
