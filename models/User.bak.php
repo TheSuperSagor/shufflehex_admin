@@ -30,26 +30,10 @@ class User extends ActiveRecord implements IdentityInterface
             'accessToken' => '101-token',
         ],
     ];
-
     public static function tableName()
     {
         return 'users';
     }
-
-
-    public function rules()
-    {
-        return [
-            [['name', 'username', 'email', 'password'], 'required'],
-            [['elite_points'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['name', 'username', 'email', 'password'], 'string', 'max' => 191],
-            [['remember_token'], 'string', 'max' => 100],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
-        ];
-    }
-
 
     /**
      * {@inheritdoc}
