@@ -14,7 +14,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <?= Html::a('Stories', ['categories/index']) ?>
+        </li>
+        <li>
+            <?= Html::a('Projects',['organization/index']) ?>
+        </li>
+        <li>
+            <?= Html::a('Products',['user-role/index']) ?>
+        </li>
+    </ul>
+    <br>
     <p>
         <?= Html::a('Add Category', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
