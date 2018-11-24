@@ -36,6 +36,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <link rel="shortcut icon" href="<?= \yii\helpers\Url::base()?>/images/favcon.png" type="image/x-icon" />
     </head>
     <body class="hold-transition <?= \dmstr\helpers\AdminLteHelper::skinClass() ?> sidebar-mini">
     <?php $this->beginBody() ?>

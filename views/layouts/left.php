@@ -31,17 +31,17 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu', 'options' => ['class' => 'header']],
-                    ['label' => 'Dashboard', 'icon' => 'file-code-o', 'url' => ['/']],
+//                    ['label' => 'Menu', 'options' => ['class' => 'header']],
+                    ['label' => 'Dashboard', 'icon' => 'desktop', 'url' => ['/']],
 //                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Management',
-                        'icon' => 'share',
+                        'icon' => 'cog',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'User Managemnet', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Category Management', 'icon' => 'list-ul', 'url' => ['/categories/'],],
+                            ['label' => 'User', 'icon' => 'users', 'url' => ['/user/'],],
+                            ['label' => 'Category', 'icon' => 'list-ul', 'url' => ['/categories/'],],
                         ],
                     ],
                 ],

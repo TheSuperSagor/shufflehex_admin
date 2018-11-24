@@ -1,16 +1,16 @@
 <?php
 
-namespace app\models\db\Search;
+namespace app\models\db\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\db\Categories;
+use app\models\db\Users;
 
 /**
- * CategoriesSearch represents the model behind the search form of `app\models\db\Categories`.
+ * UsersSearch represents the model behind the search form of `app\models\db\Users`.
  */
-class CategoriesSearch extends Categories
+class UsersSearch extends Users
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class CategoriesSearch extends Categories
     public function rules()
     {
         return [
-            [['id', 'is_deleted'], 'integer'],
-            [['category', 'shortcode', 'created_at', 'updated_at'], 'safe'],
+            [['id', 'elite_points'], 'integer'],
+            [['name', 'username', 'email', 'password', 'remember_token', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class CategoriesSearch extends Categories
      */
     public function search($params)
     {
-        $query = Categories::find();
+        $query = Users::find();
 
         // add conditions that should always apply here
 
@@ -61,13 +61,16 @@ class CategoriesSearch extends Categories
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'is_deleted' => $this->is_deleted,
+            'elite_points' => $this->elite_points,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'category', $this->category])
-            ->andFilterWhere(['like', 'shortcode', $this->shortcode]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'password', $this->password])
+            ->andFilterWhere(['like', 'remember_token', $this->remember_token]);
 
         return $dataProvider;
     }

@@ -19,6 +19,7 @@ use Yii;
  */
 class Users extends \yii\db\ActiveRecord
 {
+    public $rePass ;
     /**
      * {@inheritdoc}
      */
@@ -32,15 +33,26 @@ class Users extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
-            [['name', 'username', 'email', 'password'], 'required'],
+         $arr = [
+            [['name', 'username', 'email','elite_points',], 'required'],
             [['elite_points'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name', 'username', 'email', 'password'], 'string', 'max' => 191],
+            [['name', 'username', 'email',], 'string', 'max' => 191],
             [['remember_token'], 'string', 'max' => 100],
             [['username'], 'unique'],
             [['email'], 'unique'],
+            [['email'], 'unique'],
+            [['email'], 'email'],
+            [['rePass'], 'compare', 'compareAttribute'=>'password'],
+            [['rePass','password'], 'string', 'min'=>8],
+
         ];
+
+         if($this->isNewRecord){
+             array_push($arr,[['password','rePass'],'required']);
+         }
+
+        return $arr;
     }
 
     /**
@@ -58,6 +70,7 @@ class Users extends \yii\db\ActiveRecord
             'remember_token' => 'Remember Token',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'rePAss' => 'Repeat Password',
         ];
     }
 }

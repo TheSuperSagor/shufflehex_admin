@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$routes = require __DIR__ . '/routes.php';
 
 $config = [
     'id' => 'basic',
@@ -26,14 +27,7 @@ $config = [
             'showScriptName' => false,
             // Use pretty URLs
             'enablePrettyUrl' => true,
-            'rules' => [
-                'login' => 'site/login',
-//                '<alias:\w+>' => 'site/<alias>',
-                '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
-                '<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:[\w\-]+>/<action:[\w\-]+>' => '<controller>/<action>',
-                '<module:[\w\-]+>/<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<module>/<controller>/<action>',
-            ],
+            'rules' => $routes,
         ],
         //more skin
 //        "skin-blue",
